@@ -3,11 +3,13 @@ package com.utopia.springboot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
+//@EnableConfigurationProperties(value = MyMessage.class)
 public class Application {
 
     @Autowired
@@ -15,7 +17,7 @@ public class Application {
 
     @RequestMapping("/")
     public String welcome(){
-        return "Hello " + myMessage.getMessageString();
+        return "Hello " + myMessage.getMessageValue();
     }
 
     public static void main(String[] args) {

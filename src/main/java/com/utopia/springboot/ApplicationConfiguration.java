@@ -5,9 +5,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-@Configuration
+//@Configuration
 public class ApplicationConfiguration {
-    @Bean
+//    @Bean
 //    @Profile("prod")
     public MyMessage myMessage(@Value("${my.messageValue}") String messageString){
         MyMessage myMessage =  new MyMessage();
