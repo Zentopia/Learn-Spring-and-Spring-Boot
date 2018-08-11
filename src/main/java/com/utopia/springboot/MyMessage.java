@@ -3,13 +3,13 @@ package com.utopia.springboot;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class MyMessage {
 
-    @Value("${my.messageValue}")
+//    @Value("${my.messageValue}")
     private int messageValue;
 
-    @Value("${my.messageString}")
+//    @Value("${my.messageString}")
     private String messageString;
 
     public int getMessageValue() {
@@ -27,4 +27,6 @@ public class MyMessage {
     public void setMessageString(String messageString) {
         this.messageString = messageString;
     }
+
+
 }

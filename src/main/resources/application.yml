@@ -1,2 +1,7 @@
+
+
 my:
   messageString: ${random.value}
+spring:
+  profiles:
+    active: dev
