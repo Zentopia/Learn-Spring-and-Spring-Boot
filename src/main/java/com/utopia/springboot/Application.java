@@ -1,6 +1,7 @@
 package com.utopia.springboot;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -15,9 +16,16 @@ public class Application {
     @Autowired
     private MyMessage myMessage;
 
+    @Autowired
+    ApplicationArguments args;
+
     @RequestMapping("/")
     public String welcome(){
-        return "Hello " + myMessage.getMessageValue();
+
+        String value = args.getOptionNames().iterator().next();
+        return "Welcome " + value;
+
+//        return "Hello " + myMessage.getMessageValue();
     }
 
     public static void main(String[] args) {
